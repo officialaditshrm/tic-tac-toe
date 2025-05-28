@@ -1,0 +1,33 @@
+#game{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#maingame {
+    width: 40vh;
+    height: 40vh;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: repeat(3, 33%);
+    gap: 0.4vh;
+}
+.cells {
+    border: 1px solid gray;
+    border-radius: 7px;
+    box-shadow: 0px 0px 10px 1px grey;
+    background-color: antiquewhite;
+    font-family: gruppo;
+    font-size: xx-large;
+}
+
+.cells.win {
+    color: red;
+}
+.cells:hover{
+    cursor: pointer;
+    background-color: burlywood;
+    transform: scale(1.05);
+    transition-duration: 0.1s;
+}
+

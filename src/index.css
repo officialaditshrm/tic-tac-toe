@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'gugi';
+    src: url('./fonts/Gugi-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'gruppo';
+    src: url('./fonts/Gruppo-Regular.ttf');
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: gugi;
+}
+
+#playerinfo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    border-radius: 2vw;
+    background-color: rgba(200, 200, 150);
+    padding: 3vh 6vw 5vh;
+}
+
+.playername {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+}
+
+
+.playername > input[type = "text"] {
+    padding: 2vh;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+#playersubmit {
+    padding: 10px 15px;
+    border: 1px solid black;
+    color: white;
+    border-radius: 10px;
+    background-color: brown;
+}
+
+#playersubmit:hover{
+    transform: scale(1.05);
+    background-color: crimson;
+    cursor: pointer;
+    transition-duration: 0.1s;
+}
