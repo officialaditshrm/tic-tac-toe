@@ -12,6 +12,7 @@ function Game () {
     const [oCells, setOCells] = useState(Array(0))
     const [winDisplay, setWinDisplay] = useState(false)
     const [winCells, setWinCells] = useState(Array(3).fill(null))
+    const [redCell, setRedCell] = useState(Array(9).fill(false))
 
     useEffect ( () => {
         setPlayer1(sessionStorage.getItem("player1") || "Player X")
@@ -92,18 +93,41 @@ function Game () {
                 }
             }
         }
+        setWin(null)
+        setWinDisplay(false)
+        setWinCells(Array(3).fill(null))
     }, [xCells, oCells])
 
+    const resetGame = () => {
+        setBoard(Array(9).fill(""))
+    }
+
+    useEffect (() => {
+        let redd = Array(9).fill(false)
+        for (let i = 0; i < 3; i++){
+            console.log(winCells[i])
+            redd[winCells[i]] = true
+        }
+        setRedCell(redd)
+    }, [winCells])
+
     return (
-        <div id = "game">
-            <h1 id = "display1">X: {player1}</h1>
-            <h1 id = "display2">O: {player2}</h1>
-            <div id = "maingame">
-                {board.map((newFill, idx) => (
-                    <button className = {`cells${winCells.includes(idx) ? ' win' : ''}`} disabled = {winDisplay} key = {idx} onClick = {() => newEntry(idx)}>{newFill}</button>
-                ))}
+        <div id = "game" className = "font-gugi flex max-sm:flex-col max-sm:justify-center max-sm:mb-[10vh] justify-evenly max-sm:gap-[5vh] h-full items-center border-2 border-cyan-500 dark:text-white ">
+            <div >
+                <h1 id = "display1" className = "text-[3vw] max-sm:text-[5vw]">X: {player1}</h1>
+                <h1 id = "display2" className = "text-[3vw] max-sm:text-[5vw]">O: {player2}</h1>
             </div>
-            {winDisplay && <h1>Winner is {win}</h1>}
+            <div className = " flex flex-col items-center sm:h-full justify-center gap-[5vh]">
+                <div id = "maingame">
+                    {board.map((newFill, idx) => (
+                        <button className = {`${redCell[idx] ? `bg-amber-500 text-black`:`text-white dark:text-black bg-neutral-800 hover:bg-neutral-600 hover:dark:bg-neutral-500 dark:bg-neutral-200`} hover:scale-[1.03] hover:cursor-pointer font-gruppo text-[250%] font-extrabold shadow-[0_0_5px_1px_rgba(0,0,0,0.3)] dark:shadow-[0_0_5px_1px_rgba(255,255,255,0.3)] `} disabled = {winDisplay} key = {idx} onClick = {() => newEntry(idx)}>{newFill}</button>
+                    ))}
+                </div>
+                {winDisplay && <h1 className = "text-[2.5vw] max-sm:text-[5vw]">Winner is {win}</h1>}
+            </div>
+            <div>
+                <button className = "p-[1vw_2vw] bg-red-500 text-white rounded-xl hover:scale-105 border dark:border-white/50 shadow-[0_0_5px_1px_rgba(0,0,0,0.3)] dark:shadow-[0_0_5px_1px_rgba(255,255,255,0.3)] border-black dark:bg-red-800" onClick = {resetGame}>Reset</button>
+            </div>
         </div>
     )
 }
