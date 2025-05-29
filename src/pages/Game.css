@@ -8,3 +8,9 @@
     gap: 0.4vh;
 }
 
+@media (max-width: 390px) {
+    #maingame{
+        width: 30vh;
+        height:30vh;
+    }
+}

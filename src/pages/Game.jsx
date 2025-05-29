@@ -112,10 +112,10 @@ function Game () {
     }, [winCells])
 
     return (
-        <div id = "game" className = "font-gugi flex max-sm:flex-col max-sm:justify-center max-sm:mb-[10vh] justify-evenly max-sm:gap-[5vh] h-full items-center border-2 border-cyan-500 dark:text-white ">
+        <div id = "game" className = "font-gugi flex max-sm:flex-col max-sm:justify-center max-sm:mb-[10vh] justify-evenly max-sm:gap-[5vh] h-full items-center dark:text-white ">
             <div >
-                <h1 id = "display1" className = "text-[3vw] max-sm:text-[5vw]">X: {player1}</h1>
-                <h1 id = "display2" className = "text-[3vw] max-sm:text-[5vw]">O: {player2}</h1>
+                <h1 id = "display1" className = "text-3xl max-sm:text-2xl max-[390px]:text-lg">X: {player1}</h1>
+                <h1 id = "display2" className = "text-3xl max-sm:text-2xl max-[390px]:text-lg">O: {player2}</h1>
             </div>
             <div className = " flex flex-col items-center sm:h-full justify-center gap-[5vh]">
                 <div id = "maingame">
@@ -123,7 +123,7 @@ function Game () {
                         <button className = {`${redCell[idx] ? `bg-amber-500 text-black`:`text-white dark:text-black bg-neutral-800 hover:bg-neutral-600 hover:dark:bg-neutral-500 dark:bg-neutral-200`} hover:scale-[1.03] hover:cursor-pointer font-gruppo text-[250%] font-extrabold shadow-[0_0_5px_1px_rgba(0,0,0,0.3)] dark:shadow-[0_0_5px_1px_rgba(255,255,255,0.3)] `} disabled = {winDisplay} key = {idx} onClick = {() => newEntry(idx)}>{newFill}</button>
                     ))}
                 </div>
-                {winDisplay && <h1 className = "text-[2.5vw] max-sm:text-[5vw]">Winner is {win}</h1>}
+                {winDisplay && <h1 className = "text-3xl max-sm:text-2xl max-[390px]:text-lg">Winner is {win}</h1>}
             </div>
             <div>
                 <button className = "p-[1vw_2vw] bg-red-500 text-white rounded-xl hover:scale-105 border dark:border-white/50 shadow-[0_0_5px_1px_rgba(0,0,0,0.3)] dark:shadow-[0_0_5px_1px_rgba(255,255,255,0.3)] border-black dark:bg-red-800" onClick = {resetGame}>Reset</button>
