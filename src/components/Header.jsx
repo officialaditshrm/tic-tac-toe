@@ -83,7 +83,7 @@ function Header ({darkMode, setDarkMode}) {
                     className = {`${shortMenu && "shadow-[0_0_10px_2px_rgba(0,0,0,0.2)] dark:shadow-[0_0_10px_2px_rgba(255,255,255,0.2)]"} border max-sm:h-[6vh] max-sm:w-[10vh] dark:text-white bg-sky-200 dark:bg-sky-950 h-[3vw] w-[6vw] rounded-full border-black dark:border-white hover:scale-110 duration-300 flex items-center`}
                     >
                     {
-                        <div className = {`h-[2.55vw] max-sm:h-[5vh] mx-[0.1vh] max-sm:mx-[0.4vh] border border-black flex items-center justify-center w-[2.55vw] max-sm:w-[5vh] rounded-full bg-white bg-contain bg-no-repeat bg-center dark:translate-x-[2.925vw] max-sm:dark:translate-x-[3.9vh] `}>
+                        <div className = {`h-[2.55vw] max-sm:h-[5vh] mx-[0.15vw] max-sm:mx-[0.4vh] border border-black flex items-center justify-center w-[2.55vw] max-sm:w-[5vh] rounded-full bg-white bg-contain bg-no-repeat bg-center dark:translate-x-[2.925vw] max-sm:dark:translate-x-[3.9vh] `}>
                             <img src = {`${darkMode ? moon : sun}`} className = " w-[80%]"/>
                         </div>}
                 </button>
