@@ -76,14 +76,14 @@ function Header ({darkMode, setDarkMode}) {
                     <button className = "max-sm:flex-none flex-1 hover:scale-125" onClick = {portfolio}>MORE</button>
                 </div>
             }
-            <div id= "darkmode" className = {`${shortMenu ? 'fixed bottom-5 right-5 max-sm:bottom-1 max-sm:right-1 dark:text-white flex z-30 justify-center items-center bg-white/0 rounded-full w-[9vw] h-[9vw] max-sm:w-[30vw] max-sm:h-[30vw]' : 'border-l-2 border-black/30 rounded-r-2xl dark:border-white/30 w-[15%] flex items-center justify-center'}`}>
+            <div id= "darkmode" className = {`${shortMenu ? 'fixed flex z-30 justify-center items-center bg-white/0 rounded-full left-3 top-6' : 'border-l-2 border-black/30 rounded-r-2xl dark:border-white/30 w-[15%] flex items-center justify-center'}`}>
                 <button
                     id = "darkmodetoggle"
                     onClick = {toggleDark}
-                    className = {`${shortMenu && "shadow-[0_0_10px_2px_rgba(0,0,0,0.2)] dark:shadow-[0_0_10px_2px_rgba(255,255,255,0.2)]"} border max-sm:h-[9vw] max-sm:w-[15vw] dark:text-white bg-sky-200 dark:bg-sky-950 h-[3vw] w-[6vw] rounded-full border-black dark:border-white hover:scale-110 duration-300 flex items-center`}
+                    className = {`${shortMenu && "shadow-[0_0_10px_2px_rgba(0,0,0,0.2)] dark:shadow-[0_0_10px_2px_rgba(255,255,255,0.2)]"} border max-sm:h-[6vh] max-sm:w-[10vh] dark:text-white bg-sky-200 dark:bg-sky-950 h-[3vw] w-[6vw] rounded-full border-black dark:border-white hover:scale-110 duration-300 flex items-center`}
                     >
                     {
-                        <div className = {`h-[2.55vw] max-sm:h-[7.5vw] mx-[0.15vw] max-sm:mx-[0.6vw] border border-black flex items-center justify-center w-[2.55vw] max-sm:w-[7.5vw] rounded-full bg-white bg-contain bg-no-repeat bg-center dark:translate-x-[2.925vw] max-sm:dark:translate-x-[5.85vw] `}>
+                        <div className = {`h-[2.55vw] max-sm:h-[5vh] mx-[0.1vh] max-sm:mx-[0.4vh] border border-black flex items-center justify-center w-[2.55vw] max-sm:w-[5vh] rounded-full bg-white bg-contain bg-no-repeat bg-center dark:translate-x-[2.925vw] max-sm:dark:translate-x-[3.9vh] `}>
                             <img src = {`${darkMode ? moon : sun}`} className = " w-[80%]"/>
                         </div>}
                 </button>
