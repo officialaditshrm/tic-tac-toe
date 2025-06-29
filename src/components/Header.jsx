@@ -43,7 +43,7 @@ function Header ({darkMode, setDarkMode}) {
     }
 
     const portfolio = () => {
-        window.open('https://officialaditshrm.github.io/portfolio')
+        window.open('https://aditya-sharma-webportfolio.vercel.app', '_blank')
         setMenuOpen(false)
     }
 
